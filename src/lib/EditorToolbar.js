@@ -33,6 +33,7 @@ type Props = {
   keyEmitter: EventEmitter;
   onChange: ChangeHandler;
   focusEditor: Function;
+  custom: Function;
 };
 
 type State = {
@@ -70,6 +71,7 @@ export default class EditorToolbar extends Component {
         {this._renderLinkButtons()}
         {this._renderBlockTypeDropdown()}
         {this._renderUndoRedo()}
+        {this.props.custom ? this.props.custom(this.props.onChange, RichUtils, this.props.editorState) : null}
       </div>
     );
   }

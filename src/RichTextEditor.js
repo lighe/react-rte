@@ -75,6 +75,7 @@ export default class RichTextEditor extends Component {
           editorState={editorState}
           onChange={this._onChange}
           focusEditor={this._focus}
+          custom={this.props.custom}
         />
         <div className={combinedEditorClassName}>
           <Editor
